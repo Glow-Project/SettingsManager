@@ -3,5 +3,5 @@
 ## Installation
 
 ```
-$ ppm install https://
+$ ppm install SettingsManager
 ```
