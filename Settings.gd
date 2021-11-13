@@ -3,6 +3,7 @@ extends Node
 class_name Settings
 
 var config: Dictionary = {}
+var default_config: Dictionary = {}
 var file_path = "user://settings.dat"
 
 # Wether the config should be automatically saved
@@ -43,6 +44,15 @@ func sets(setting: String, new_val) -> void:
 	if auto_save:
 		write()
 
+# Set a default value for setting
+func set_default(setting: String, new_val) -> void:
+	default_config[setting] = new_val
+
+# Set the default config if there is no value
+func adapt_default() -> void:
+	for key in default_config.keys():
+		if !config.has(key):
+			config[key] = default_config[key]
 
 # Write the current config to a file
 func write():
@@ -64,3 +74,6 @@ func read():
 	if error == OK:
 		config = file.get_var()
 		file.close()
+
+	# Adapt the default config
+	adapt_default()
