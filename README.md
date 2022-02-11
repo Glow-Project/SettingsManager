@@ -22,6 +22,7 @@ extends Settings
 Then create a Global instance (here called `settings`)
 
 Now you can configure your Settings instance
+
 `InitSettings.gd`
 
 ```gdscript
