@@ -15,9 +15,9 @@ $ ppm install SettingsManager
 Firstly create a new script (here called `InitSettings.gd`) that extends the Settings class:
 `InitSettings.gd`
 
-    ```gdscript
-    extends Settings
-    ```
+```gdscript
+extends Settings
+```
 
 Then create a Global instance (here called `settings`)
 
